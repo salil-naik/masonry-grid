@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trial</title>
+    <style>
+        .grid-container{
+            display:grid; 
+            grid-gap:25px; 
+            grid-auto-rows: 1;
+            grid-template-columns: 7fr 2fr 3fr;
+        }
+
+        .grid-item{
+            background-color:gray; border-radius:10px; padding:30px; color:black; height:fit-content
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item" id="blockOne">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed dolores voluptatum aut exercitationem, voluptatibus modi soluta veniam similique eveniet accusamus. Molestias quas odio cum omnis, aliquid consectetur similique distinctio saepe?</div>
+        <div class="grid-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem vero, accusantium odio optio exercitationem aliquam voluptatum cum! Veniam adipisci rerum magni mollitia perspiciatis quis temporibus nobis laborum minus, pariatur vitae officiis dolore eos consequatur. Nisi repellat maiores temporibus quia! Voluptatum iste reprehenderit libero aliquid id illum provident ducimus soluta, repellat harum atque dicta aspernatur, maxime assumenda, fugiat tempore consectetur voluptates nisi veritatis corrupti a perferendis pariatur earum doloremque? Dolorum voluptas repellendus minus quis dicta aut rerum! Asperiores explicabo architecto inventore.</div>
+        <div class="grid-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, sit.</div>
+        <div class="grid-item" style="background-color:skyblue">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque nam quia voluptates eius distinctio odio nesciunt quibusdam exercitationem. Est perspiciatis odit quisquam ut in debitis, nulla optio ad, voluptas reiciendis molestiae error repudiandae consequuntur tempore nobis illo accusantium aperiam deserunt, deleniti quas amet sunt repellat a! Sunt aspernatur accusamus nisi.</div>
+    </div>
+
+    <script>
+        let blockOne = document.getElementById('blockOne');
+
+        var height = window.getComputedStyle(blockOne, null).getPropertyValue("height");
+        console.log(height);
+
+        blockOne.style.gridRowEnd = `span ${height}`;
+        
+    </script>
+</body>
+</html>
